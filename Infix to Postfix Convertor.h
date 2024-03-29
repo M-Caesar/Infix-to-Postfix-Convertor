@@ -19,6 +19,6 @@ public:
 	string convert(string prefix);
 
 	//Precondition: Function is provided with the mathematical operation to be appraised
-	//Postcondition: ranking of precedence is returned with * and / being of higher precedence than + and -
+	//Postcondition: Ranking of precedence is returned with * and / being of higher precedence than + and -
 	int precedence(char op);
 };
