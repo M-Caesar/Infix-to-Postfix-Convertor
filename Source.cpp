@@ -7,9 +7,21 @@ int main()
 	string prefix;
 	string postfix;
 	inFixpostFix test;
-	//std::cin >> prefix;
-	std::getline(std::cin, prefix);
-	std::cout << "This is the infix statement: " << prefix << endl;
-	std::cout << "This is the postfix" << endl;
-	std::cout << test.convert(prefix) << endl;
+	ifstream inFile;
+	string file;
+
+	std::cout << "Enter the file that you would like to open: " << endl;
+	std::cin >> file;
+	inFile.open(file);
+	if (!inFile.is_open())
+	{
+		cout << "Could not open file, exit the program and try again" << endl;
+	}
+	while (!inFile.eof()) 
+	{
+		std::getline(inFile, prefix);
+		std::cout << "This is the infix statement: " << prefix << endl;
+		std::cout << "This is the postfix: " << test.convert(prefix) << endl;
+		//std::cout << test.convert(prefix) << endl;
+	}
 }
